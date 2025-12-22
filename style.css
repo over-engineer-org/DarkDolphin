@@ -180,30 +180,70 @@ body {
     transition: width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1);
 }
 
+/* Linux Tooltip Container */
 .linux-skill {
+    position: relative;
     cursor: help;
 }
 
-.easter-egg {
+/* The actual tooltip bubble */
+.linux-skill::after {
+    content: attr(data-tooltip); /* Pulls text from the HTML attribute */
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 125%; /* Positions it above the card */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    
+    /* Styling */
     background-color: var(--accent);
     color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.85rem;
-    font-weight: 700;
-    transform: translateY(100%);
-    transition: transform 0.3s ease-in-out;
-    pointer-events: none; /* Prevents the overlay from blocking clicks */
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    
+    /* Animation - Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
 }
 
-.linux-skill:hover .easter-egg {
-    transform: translateY(0);
+/* The little triangle pointing down */
+.linux-skill::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--accent) transparent transparent transparent;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s ease;
+    z-index: 10;
+}
+
+/* This overrides the 'hidden' behavior specifically for the card with the tooltip */
+.skill-card.linux-skill {
+    overflow: visible;
+}
+
+/* Optional: Ensure the grid container also allows the overflow */
+.skills-grid {
+    overflow: visible;
+}
+
+/* Hover State */
+.linux-skill:hover::after,
+.linux-skill:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
 }
 
 /* --- Projects Section --- */
