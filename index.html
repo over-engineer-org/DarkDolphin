@@ -3,93 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Dolphin . site </title>
+    <title>Shravan | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
         <div class="header-container">
             <div class="logo">
-              <a href="/"> Shravan </a>
+              <a href="#">Shravan</a>
             </div>
             <nav class="nav">
                 <ul class="nav-list">
                   <li><a href="#about">About</a></li>
-                  <li><a href="#projects">Projects</a></li>
                   <li><a href="#skills">Skills</a></li>
-                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#projects">Projects</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="landing">
-        <div class="landing-about">
-            <h1>Hey , i'm Shravan </h1>
-            <p class="landing-about-text">
-                I’m Shravan, a computer science student who likes building things that actually make sense.
-                I’m interested in systems, software, and how ideas turn into products — from low-level fundamentals to clean user-facing interfaces.
-                Right now, I focus on strengthening my core foundations (DSA, problem solving, and fundamentals of CS) while gradually building real projects. I prefer understanding why something works instead of blindly copying solutions, even if that means slower progress at first.
-                I enjoy working on projects where I can learn deeply, break things safely, and iterate until they feel right. Long-term, I’m aiming to grow into a well-rounded software engineer with strong fundamentals and real-world problem-solving skills.
-            </p>
-            <button class="landing-about-start">
-                Let's Get Started
-            </button>
-        </div>
-        <div class="landing-pic-container"></div>
-    </div>
+    <main class="main-content">
+        <section id="about" class="landing">
+            <div class="landing-about">
+                <span class="greeting">Hey, I'm Shravan</span>
+                <h1>Building systems with <br><span class="highlight">intent and curiosity.</span></h1>
+                <p class="landing-about-text">
+                    I’m a computer science student focused on the "why" behind the code. 
+                    From low-level C++ protocols to high-level AI pipelines, I build software that prioritizes core fundamentals and clean interfaces.
+                </p>
+                <div class="cta-group">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                </div>
+            </div>
+        </section>
 
-    <div class="skill-container">
-        <h2> Skills </h2>
-        <p class="intro"> This is my tool kit :) , also some skill issue </p>
-        <div class="container">
-            <div class="skill-item"> C/C++ </div>
-            <div class="skill-item"> Python </div>
-            <div class="skill-item"> Java </div>
-            <div class="skill-item"> JavaScript </div>
-            <div class="skill-item"> Version control (Git) </div>
-            <div class="skill-item"> Scripting (Bash) </div>
-            <div class="skill-item"> Docker </div>
-            <div class="skill-item"> Linux </div>
-        </div>
-    </div>
+        <section id="skills" class="skill-container">
+            <h2 class="section-title">Toolkit</h2>
+            <div class="skills-grid">
+                <div class="skill-item">C/C++</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Java</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">Git</div>
+                <div class="skill-item">Bash</div>
+                <div class="skill-item">Docker</div>
+                <div class="skill-item">Linux</div>
+            </div>
+        </section>
 
-    <div class="project">
-      <p>Here are some of my notable projects</p>
+        <section id="projects" class="project-section">
+          <h2 class="section-title">Notable Projects</h2>
+          <div class="project-grid">
+              <div class="project-card">
+                <h4 class="project-name">Locksmith</h4>
+                <p class="project-info">An E2EE communication protocol written in C++ focusing on cryptographic fundamentals.</p>
+                <a href="#" class="project-link">GitHub &rarr;</a>
+              </div>
 
-      <div class="project-container">
-          <div class="project-card">
-            
-            <div class="project-card-img-container"> <img src="" alt=""> </div>
-            <h4 class="project-name">Locksmith</h4>
-            <p class="project-info"> An E2EE (end-to-end encrypted) communication protocol, written in C++ </p>
-            <a href="github.link">View on GitHub</a>
+              <div class="project-card">
+                <h4 class="project-name">Re-Right</h4>
+                <p class="project-info">AI image generation pipeline that mimics personal handwriting styles using neural networks.</p>
+                <a href="#" class="project-link">GitHub &rarr;</a>
+              </div>
           </div>
+        </section>
+    </main>
 
-          <div class="project-card">
-            <div class="project-card-img-container"> <img src="" alt=""> </div>
-            <h4 class="project-name">Re-Right</h4>
-            <p class="project-info"> Re-Right is an AI image generation pipeline which mimics your handwriting </p>
-            <a href="github.link">View on GitHub</a>
-          </div>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
 
-          <div class="project-card">
-            <div class="project-card-img-container"> <img src="" alt=""> </div>
-            <h4 class="project-name">Dummy Project</h4>
-            <p class="project-info"> Dummy project because im lazy </p>
-            <a href="github.link">View on GitHub</a>
-          </div>
-
-          <div class="project-card">
-            <div class="project-card-img-container"> <img src="" alt=""> </div>
-            <h4 class="project-name">Dummy Project</h4>
-            <p class="project-info"> Dummy Project because im lazy </p>
-            <a href="github.link">View on GitHub</a>
-          </div>
-          
-      </div>
-    </div>
-
+        // Apply this to any element you want to animate
+        document.querySelectorAll('.project-card, .skill-item, .landing-about').forEach((el) => {
+          el.classList.add('reveal');
+          observer.observe(el);
+        });
+    </script>
 </body>
 </html>
-
