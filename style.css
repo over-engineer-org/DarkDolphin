@@ -128,29 +128,87 @@ body {
 }
 
 /* --- Skills Section --- */
-.section-title {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    color: var(--accent);
-}
-
-.skill-container {
-    padding: 6rem 0;
-}
-
+/* Container for the skills */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-.skill-item {
-    padding: 1rem;
+/* Individual Skill Card */
+.skill-card {
     background-color: var(--card-bg);
+    padding: 1.2rem;
+    border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 6px;
-    text-align: center;
-    font-size: 0.9rem;
+    position: relative; 
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.skill-header span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.level {
+    color: var(--text-dim);
+    font-size: 0.8rem !important;
+}
+
+/* The Bar Styling */
+.skill-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333; 
+    border-radius: 2px;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--accent); 
+    border-radius: 2px;
+    /* This makes the bars "grow" when the page loads if using the JS observer we discussed */
+    transition: width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1);
+}
+
+/* Linux Easter Egg */
+.linux-skill {
+    cursor: help;
+}
+
+.easter-egg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none; /* Prevents the overlay from blocking clicks */
+}
+
+.linux-skill:hover .easter-egg {
+    transform: translateY(0);
 }
 
 /* --- Projects Section --- */
