@@ -32,8 +32,8 @@ body {
     height: 70px;
     z-index: 1000;
     background-color: var(--header-blur);
-    backdrop-filter: blur(12px); /* The Blur Effect */
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px); /* The Blur Effect */
+    -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -128,7 +128,6 @@ body {
 }
 
 /* --- Skills Section --- */
-/* Container for the skills */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -136,7 +135,6 @@ body {
     margin-top: 2rem;
 }
 
-/* Individual Skill Card */
 .skill-card {
     background-color: var(--card-bg);
     padding: 1.2rem;
@@ -148,7 +146,7 @@ body {
 }
 
 .skill-card:hover {
-    transform: translateY(-2px); /* Subtle lift on hover */
+    transform: translateY(-2px); 
 }
 
 .skill-header {
@@ -168,7 +166,6 @@ body {
     font-size: 0.8rem !important;
 }
 
-/* The Bar Styling */
 .skill-bar {
     width: 100%;
     height: 4px;
@@ -180,11 +177,9 @@ body {
     height: 100%;
     background-color: var(--accent); 
     border-radius: 2px;
-    /* This makes the bars "grow" when the page loads if using the JS observer we discussed */
     transition: width 1.5s cubic-bezier(0.17, 0.55, 0.55, 1);
 }
 
-/* Linux Easter Egg */
 .linux-skill {
     cursor: help;
 }
@@ -271,4 +266,50 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.feats-section {
+    padding: 6rem 0;
+}
+
+.feats-container {
+    max-width: 800px; /* Keep it narrow for better readability */
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 2rem;
+    margin-top: 2rem;
+}
+
+.feat-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+/* The Dot on the Line */
+.feat-dot {
+    position: absolute;
+    left: calc(-2rem - 5px); /* Perfectly aligns with the left border */
+    top: 5px;
+    width: 9px;
+    height: 9px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.feat-title {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.feat-description {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Animation trigger for feats */
+.feat-item.reveal {
+    transition-delay: 0.2s; /* Stagger the animation slightly */
 }

@@ -18,6 +18,7 @@
                   <li><a href="#about">About</a></li>
                   <li><a href="#skills">Skills</a></li>
                   <li><a href="#projects">Projects</a></li>
+                  <li><a href="#blog">Blogs</a></li>
                 </ul>
             </nav>
         </div>
@@ -124,22 +125,43 @@
               </div>
           </div>
         </section>
+
+        <section id="feats" class="feats-section">
+        <h2 class="section-title">Other Feats</h2>
+        <div class="feats-container">
+            <div class="feat-item">
+                <div class="feat-dot"></div>
+                    <div class="feat-content">
+                        <h3 class="feat-title">Code Mantra 2K25 • 1st Place</h3>
+                        <p class="feat-description">Secured the top spot at an inter-college technical competition, demonstrating speed and precision in problem-solving.</p>
+                    </div>
+            </div>
+
+        <div class="feat-item">
+            <div class="feat-dot"></div>
+                <div class="feat-content">
+                    <h3 class="feat-title">AxionOS </h3>
+                    <p class="feat-description">Building and maintaining AxionOS build for the Pacman device, focusing on optimization and stability </p>
+                </div>
+            </div>
+          </div>
+        </section>
     </main>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        // Apply this to any element you want to animate
-        document.querySelectorAll('.project-card, .skill-item, .landing-about').forEach((el) => {
-          el.classList.add('reveal');
-          observer.observe(el);
+            }
         });
+    }, { threshold: 0.1 });
+
+    // Added .skill-card and .feat-item to the list
+    document.querySelectorAll('.project-card, .skill-card, .landing-about, .feat-item').forEach((el) => {
+        el.classList.add('reveal');
+        observer.observe(el);
+    });
     </script>
 </body>
 </html>
