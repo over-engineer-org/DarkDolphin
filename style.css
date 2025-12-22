@@ -117,4 +117,8 @@
   align-items: center;
 }
 
-.
+.project {
+  background-color: cyan;
+  width: 100%;
+  height: 500px;
+}
