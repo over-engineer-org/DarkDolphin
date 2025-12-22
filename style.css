@@ -127,7 +127,6 @@ body {
     transform: translateY(-2px);
 }
  /* My Intreset Section */
- 
 .interests-section {
     padding: 6rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -228,11 +227,10 @@ body {
     cursor: help;
 }
 
-/* The actual tooltip bubble */
 .linux-skill::after {
-    content: attr(data-tooltip); /* Pulls text from the HTML attribute */
+    content: attr(data-tooltip); 
     position: absolute;
-    bottom: 125%; /* Positions it above the card */
+    bottom: 125%; 
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     
@@ -253,7 +251,6 @@ body {
     z-index: 10;
 }
 
-/* The little triangle pointing down */
 .linux-skill::before {
     content: "";
     position: absolute;
@@ -270,12 +267,10 @@ body {
     z-index: 10;
 }
 
-/* This overrides the 'hidden' behavior specifically for the card with the tooltip */
 .skill-card.linux-skill {
     overflow: visible;
 }
 
-/* Optional: Ensure the grid container also allows the overflow */
 .skills-grid {
     overflow: visible;
 }
@@ -337,14 +332,12 @@ body {
     }
 }
 
-/* Initial state: hidden and slightly moved down */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out;
 }
 
-/* Active state: visible and in position */
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
@@ -355,7 +348,7 @@ body {
 }
 
 .feats-container {
-    max-width: 800px; /* Keep it narrow for better readability */
+    max-width: 800px;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     padding-left: 2rem;
     margin-top: 2rem;
@@ -369,7 +362,7 @@ body {
 /* The Dot on the Line */
 .feat-dot {
     position: absolute;
-    left: calc(-2rem - 5px); /* Perfectly aligns with the left border */
+    left: calc(-2rem - 5px);
     top: 5px;
     width: 9px;
     height: 9px;
@@ -393,5 +386,5 @@ body {
 
 /* Animation trigger for feats */
 .feat-item.reveal {
-    transition-delay: 0.2s; /* Stagger the animation slightly */
+    transition-delay: 0.3s; 
 }
