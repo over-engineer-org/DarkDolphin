@@ -1,10 +1,10 @@
 [
     {
-        "id":"test-blog",
-        "title":"My first blog",
-        "date":"some random date",
-        "tags":["Android" , "Linux" ,"System Design"],
+        "id": "test-blog",
+        "title": "My first blog",
+        "date": "July 1, 2026",
+        "tags": ["Android", "Linux", "System Design"],
         "description": "A small introduction to why I started writing and what I plan to share here",
-        "content": "# Hello\n\nThis is **my first blog**.\n\n- lorem ipsum something something 1\n-"
+        "file": "posts/test-blog.md"
     }
 ]

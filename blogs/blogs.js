@@ -10,9 +10,14 @@ async function getBlogs() {
 }
 
 
-function getli(title,date,description,tags){
+function getli(id, title, date, description, tags){
     const li = document.createElement("li");
     li.classList.add("blog-card");
+    
+    // Add click event to navigate to the blog template page with id query param
+    li.addEventListener("click", () => {
+        window.location.href = `blog.html?id=${encodeURIComponent(id)}`;
+    });
     
     const blogInfo = document.createElement("div");
     blogInfo.classList.add("blog-info");
@@ -52,6 +57,7 @@ function makeList(blogs){
     blogs.forEach((blog) => {
         list.append(
         getli(
+            blog.id,
             blog.title,
             blog.date,
             blog.description,

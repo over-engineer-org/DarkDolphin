@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Dark Dolphin</title>
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/blogs.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../Home.html#about">Dark Dolphin</a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../Home.html#about">About</a></li>
+                    <li><a href="../Home.html#skills">Skills</a></li>
+                    <li><a href="../Home.html#projects">Projects</a></li>
+                    <li><a href="../blogs/main.html">Blogs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="post-page">
+
+        <!-- Loading state -->
+        <div id="blog-loading" class="blog-status">
+            <div class="loading-spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <!-- Error state -->
+        <div id="blog-error" class="blog-status error-status">
+            <h2>Post not found</h2>
+            <p id="error-message">We couldn't find the blog post you were looking for.</p>
+            <a href="main.html" class="return-btn">← Return to Blogs</a>
+        </div>
+
+        <!-- Post -->
+        <article id="blog-article" class="post-body">
+
+            <a href="main.html" class="back-link">← Blogs</a>
+
+            <header class="post-head">
+                <div id="post-tags" class="post-tags"></div>
+                <h1 id="post-title"></h1>
+                <div class="post-meta">
+                    <span id="post-date"></span>
+                    <span class="meta-sep">·</span>
+                    <span id="post-read-time"></span>
+                </div>
+            </header>
+
+            <div id="post-cover-container" class="post-cover-container">
+                <img id="post-cover" class="blog-cover" src="" alt="Blog Cover">
+            </div>
+
+            <div id="post-content" class="post-content"></div>
+
+            <footer class="post-footer">
+                <a href="main.html" class="back-link">← Back to all posts</a>
+            </footer>
+
+        </article>
+
+    </main>
+
+    <script src="blog.js"></script>
+</body>
+</html>
